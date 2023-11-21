@@ -1,5 +1,9 @@
-package Pessoa;
+class Pobre extends Pessoa {
+    Pobre(String nome) {
+        super(nome);
+    }
 
-public class KarenEx2bPobre {
-
+    void trabalhar() {
+        System.out.println(nome + " está trabalhando duro.");
+    }
 }
