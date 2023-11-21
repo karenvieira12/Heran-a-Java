@@ -1,5 +1,9 @@
-package Pessoa;
+class Miseravel extends Pessoa {
+    Miseravel(String nome) {
+        super(nome);
+    }
 
-public class KarenEx2BMiseravel {
-
+    void pedirEsmola() {
+        System.out.println(nome + " está pedindo esmola.");
+    }
 }
