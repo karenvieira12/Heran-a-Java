@@ -1,0 +1,43 @@
+class Animal {
+    String nome;
+
+    Animal(String nome) {
+        this.nome = nome;
+    }
+
+    void emitirSom() {
+        System.out.println("O animal emite um som.");
+    }
+}
+
+class Ave extends Animal {
+    Ave(String nome) {
+        super(nome);
+    }
+
+    void voar() {
+        System.out.println(nome + " está voando.");
+    }
+}
+
+class Mamifero extends Animal {
+    Mamifero(String nome) {
+        super(nome);
+    }
+
+    void amamentar() {
+        System.out.println(nome + " está amamentando.");
+    }
+}
+
+public class HerancaExemplo {
+    public static void main(String[] args) {
+        Ave passaro = new Ave("Canário");
+        passaro.voar();
+        passaro.emitirSom();
+
+        Mamifero cachorro = new Mamifero("Labrador");
+        cachorro.amamentar();
+        cachorro.emitirSom();
+    }
+}
