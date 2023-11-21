@@ -1,0 +1,92 @@
+public class Livro {
+    private String titulo;
+    private String autor;
+
+    public Livro(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void exibirDetalhes() {
+        System.out.println("Título: " + titulo);
+        System.out.println("Autor: " + autor);
+    }
+}
+
+public class LivroTecnico extends Livro {
+    private String area;
+
+    public LivroTecnico(String titulo, String autor, String area) {
+        super(titulo, autor);
+        this.area = area;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    @Override
+    public void exibirDetalhes() {
+        super.exibirDetalhes();
+        System.out.println("Área: " + area);
+    }
+}
+
+public class LivroInfantil extends Livro {
+    private String faixaEtaria;
+
+    public LivroInfantil(String titulo, String autor, String faixaEtaria) {
+        super(titulo, autor);
+        this.faixaEtaria = faixaEtaria;
+    }
+
+    public String getFaixaEtaria() {
+        return faixaEtaria;
+    }
+
+    public void setFaixaEtaria(String faixaEtaria) {
+        this.faixaEtaria = faixaEtaria;
+    }
+
+    @Override
+    public void exibirDetalhes() {
+        super.exibirDetalhes();
+        System.out.println("Faixa Etária: " + faixaEtaria);
+    }
+}
+Agora, aqui está uma classe de teste que cria instâncias de LivroTecnico e LivroInfantil e invoca o método exibirDetalhes:
+
+java
+Copy code
+public class TesteLivros {
+    public static void main(String[] args) {
+        LivroTecnico livroTecnico = new LivroTecnico("Clean Code", "Robert C. Martin", "Programação");
+        LivroInfantil livroInfantil = new LivroInfantil("O Pequeno Príncipe", "Antoine de Saint-Exupéry", "Infantil");
+
+        System.out.println("Detalhes do Livro Técnico:");
+        livroTecnico.exibirDetalhes();
+
+        System.out.println("\nDetalhes do Livro Infantil:");
+        livroInfantil.exibirDetalhes();
+    }
+}
